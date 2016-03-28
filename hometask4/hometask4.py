@@ -13,20 +13,26 @@ filetype = config.get('setup', 'filetype')
 snapshot = 1
 
 class var(object):
-    cpu = psutil.cpu_times(percpu=True)
-    cpu_p = psutil.cpu_percent(percpu=True)
-    mem = psutil.virtual_memory()
-    disk = psutil.disk_usage('/')
-    disk_io = psutil.disk_io_counters()
-    net_count = psutil.net_io_counters(pernic=True)
+    def __init__(self):
+        self.cpu = psutil.cpu_times(percpu=True)
+        self.cpu_p = psutil.cpu_percent(percpu=True)
+        self.mem = psutil.virtual_memory()
+        self.disk = psutil.disk_usage('/')
+        self.disk_io = psutil.disk_io_counters()
+        self.net_count = psutil.net_io_counters(pernic=True)
 
+class var1(var):
+    def __init__(self):
+        super(var1, self).__init__()
     def kfdict(self, kf):
         a = list(kf)
         b = kf._fields
         final_dict = dict(zip(a, b))
         return final_dict
 
-class kf1(var):
+class kf1(var1):
+    def __init__(self):
+        super(kf1, self).__init__()
     def txttop(self, myfile='top.txt'):
         global snapshot
         print("info >> top(SNAPSHOT {0})".format(snapshot))
@@ -45,8 +51,11 @@ class kf1(var):
         f.close()
         snapshot += 1
 
-class kf2(var):
+class kf2(var1):
+    def __init__(self):
+        super(kf2, self).__init__()
     def jsontop(self, myfile="top.json"):
+        self.__init__()
         global snapshot
         print("info >> top(SNAPSHOT {0})".format(snapshot))
         fmt = '%Y-%m-%d %H:%M:%S %Z'
@@ -55,29 +64,34 @@ class kf2(var):
         jsonf = open(myfile, "a")
         jsonf.write("\nSnapshot #{0}, tstmp - {1}\n".format(snapshot, tstmp))
         jsonf.write("\nCPU\n")
-        json.dump(super().cpu, jsonf, indent=1)
+        json.dump(self.cpu, jsonf, indent=1)
         jsonf.write("\nCPU\n")
-        json.dump(super().cpu_p, jsonf, indent=1)
+        json.dump(self.cpu_p, jsonf, indent=1)
         jsonf.write("\nVMem\n")
-        json.dump(super().mem, jsonf, indent=1)
+        json.dump(self.mem, jsonf, indent=1)
         jsonf.write("\nDisk\n")
-        json.dump(super().kfdict(super().disk), jsonf, indent=1)
+        json.dump(self.kfdict(self.disk), jsonf, indent=1)
         jsonf.write("\nDisk IO\n")
-        json.dump(super().kfdict(super().disk_io), jsonf, indent=1)
+        json.dump(self.kfdict(self.disk_io), jsonf, indent=1)
         jsonf.write("\nNetCount\n")
-        json.dump(super().net_count, jsonf, indent=1)
+        json.dump(self.net_count, jsonf, indent=1)
         jsonf.write("\n\n")
         jsonf.close()
         snapshot += 1
 
-x = kf1()
-y = kf2()
+def txtjob():
+    x = kf1()
+    x.txttop()
+def jsonjob():
+    y = kf2()
+    y.jsontop()
+
 if filetype == "txt":
     print(filetype + ' in' + timeint + ' minute(s)')
-    schedule.every(int(timeint)).minutes.do(x.txttop)
+    schedule.every(int(timeint)).minutes.do(txtjob)
 elif filetype == "json":
     print(filetype + ' in' + timeint + ' minute(s)')
-    schedule.every(int(timeint)).minutes.do(y.jsontop)
+    schedule.every(int(timeint)).minutes.do(jsonjob)
 else:
     print("check type in conf")
     quit()
