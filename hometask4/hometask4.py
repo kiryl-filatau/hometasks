@@ -1,3 +1,4 @@
+#python 3.5.1
 import configparser
 import psutil
 import datetime
@@ -41,12 +42,12 @@ class kf1(var1):
         tstmp = datetime.datetime.strftime(currtime, fmt)
         f = open(myfile, "a")
         f.write("Snapshot {0}:, timestamp - {1}:\n".format(snapshot, tstmp))
-        f.write("CPU: {0}\n".format(super().cpu[0]))
-        f.write("CPU: {0}%\n".format(super().cpu_p[0]))
-        f.write("VMem: {0}Mb\n".format(super().mem[0] / 1048576))
-        f.write("Disk {}Mb\n".format(super().disk[0] / 1048576))
-        f.write("Disk IO {0}Mb\n".format(super().disk_io[0] / 1048576))
-        f.write("NetCount {}\n".format(super().net_count))
+        f.write("CPU: {0}\n".format(self.cpu[0]))
+        f.write("CPU: {0}%\n".format(self.cpu_p[0]))
+        f.write("VMem: {0}Mb\n".format(self.mem[0] / 1048576))
+        f.write("Disk {}Mb\n".format(self.disk[0] / 1048576))
+        f.write("Disk IO {0}Mb\n".format(self.disk_io[0] / 1048576))
+        f.write("NetCount {}\n".format(self.net_count))
         f.write("\n")
         f.close()
         snapshot += 1
