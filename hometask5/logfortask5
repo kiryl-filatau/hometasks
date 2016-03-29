@@ -1,0 +1,25 @@
+DEBUG:root:let me check them all
+WARNING:root:Alarmaaaaaaa
+INFO:root:some variables are created
+INFO:schedule:Running job Every 1 second do txtjob() (last run: [never], next run: 2016-03-29 18:54:41)
+INFO:schedule:Running job Every 1 second do txtjob() (last run: 2016-03-29 18:54:43, next run: 2016-03-29 18:54:44)
+INFO:schedule:Running job Every 1 second do txtjob() (last run: 2016-03-29 18:54:46, next run: 2016-03-29 18:54:47)
+DEBUG:root:let me check them all
+WARNING:root:Alarmaaaaaaa
+INFO:root:some variables are created
+INFO:schedule:Running job Every 1 second do txtjob() (last run: [never], next run: 2016-03-29 18:55:09)
+ERROR:root:My exception occurred, '_io.TextIOWrapper' object has no attribute 'writte'
+Traceback (most recent call last):
+  File "/root/tmp/hometasks/hometask5/task5.py", line 69, in txttop
+    f.writte("CPU: {0}%\n".format(self.cpu_p[0]))
+AttributeError: '_io.TextIOWrapper' object has no attribute 'writte'
+DEBUG:root:let me check them all
+WARNING:root:Alarmaaaaaaa
+INFO:root:some variables are created
+ERROR:root:WTF, check config
+DEBUG:root:let me check them all
+WARNING:root:Alarmaaaaaaa
+INFO:root:some variables are created
+INFO:schedule:Running job Every 1 second do txtjob() (last run: [never], next run: 2016-03-29 18:59:41)
+INFO:schedule:Running job Every 1 second do txtjob() (last run: 2016-03-29 18:59:43, next run: 2016-03-29 18:59:44)
+INFO:schedule:Running job Every 1 second do txtjob() (last run: 2016-03-29 18:59:46, next run: 2016-03-29 18:59:47)

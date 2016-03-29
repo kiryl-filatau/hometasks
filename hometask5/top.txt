@@ -1,0 +1,24 @@
+Snapshot 1:, timestamp - 2016-03-29 18:59:43 :
+CPU: scputimes(user=3558.98, nice=0.3, system=2041.03, idle=113315.85, iowait=61.59, irq=0.1, softirq=5.79, steal=0.0, guest=158.07)
+CPU: 5.4%
+VMem: 11786.70703125Mb
+Disk 775486.3828125Mb
+Disk IO 0.06241416931152344Mb
+NetCount {'virbr0': snetio(bytes_sent=18144051, bytes_recv=971762, packets_sent=16557, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'eth0': snetio(bytes_sent=72622084, bytes_recv=685492417, packets_sent=458597, packets_recv=1683868, errin=0, errout=0, dropin=0, dropout=0), 'vnet0': snetio(bytes_sent=21252299, bytes_recv=1140462, packets_sent=76328, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'lo': snetio(bytes_sent=1107411, bytes_recv=1107411, packets_sent=35651, packets_recv=35651, errin=0, errout=0, dropin=0, dropout=0), 'virbr0-nic': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
+
+Snapshot 2:, timestamp - 2016-03-29 18:59:46 :
+CPU: scputimes(user=3559.17, nice=0.3, system=2041.13, idle=113318.63, iowait=61.59, irq=0.1, softirq=5.79, steal=0.0, guest=158.08)
+CPU: 9.7%
+VMem: 11786.70703125Mb
+Disk 775486.3828125Mb
+Disk IO 0.06241416931152344Mb
+NetCount {'virbr0': snetio(bytes_sent=18144051, bytes_recv=971762, packets_sent=16557, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'eth0': snetio(bytes_sent=72622537, bytes_recv=685494075, packets_sent=458603, packets_recv=1683890, errin=0, errout=0, dropin=0, dropout=0), 'vnet0': snetio(bytes_sent=21252403, bytes_recv=1140462, packets_sent=76330, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'lo': snetio(bytes_sent=1107527, bytes_recv=1107527, packets_sent=35655, packets_recv=35655, errin=0, errout=0, dropin=0, dropout=0), 'virbr0-nic': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
+
+Snapshot 3:, timestamp - 2016-03-29 18:59:49 :
+CPU: scputimes(user=3559.68, nice=0.3, system=2041.21, idle=113321.12, iowait=61.59, irq=0.1, softirq=5.79, steal=0.0, guest=158.08)
+CPU: 19.2%
+VMem: 11786.70703125Mb
+Disk 775486.3828125Mb
+Disk IO 0.06241416931152344Mb
+NetCount {'virbr0': snetio(bytes_sent=18144051, bytes_recv=971762, packets_sent=16557, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'eth0': snetio(bytes_sent=72622601, bytes_recv=685495255, packets_sent=458604, packets_recv=1683903, errin=0, errout=0, dropin=0, dropout=0), 'vnet0': snetio(bytes_sent=21252455, bytes_recv=1140462, packets_sent=76331, packets_recv=12050, errin=0, errout=0, dropin=0, dropout=0), 'lo': snetio(bytes_sent=1107527, bytes_recv=1107527, packets_sent=35655, packets_recv=35655, errin=0, errout=0, dropin=0, dropout=0), 'virbr0-nic': snetio(bytes_sent=0, bytes_recv=0, packets_sent=0, packets_recv=0, errin=0, errout=0, dropin=0, dropout=0)}
+
