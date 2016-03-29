@@ -14,7 +14,7 @@ timeint = config.get('setup', 'int')
 filetype = config.get('setup', 'filetype')
 log = config.get('log', 'loging')
 
-logging.basicConfig(filename='logfortask5.log', level=log)
+logging.basicConfig(filename='logfortask5', level=log)
 logging.debug('let me check them all')
 logging.warning('Alarmaaaaaaa')
 
